@@ -1,0 +1,80 @@
+<header>
+  <nav
+    class="
+      navbar navbar-expand-sm navbar-toggleable-sm navbar-light
+      bg-white
+      border-bottom
+      box-shadow
+      mb-3
+    "
+  >
+  <div *ngIf="!isLoggedIn" class="container">
+
+    <a class="navbar-brand" [routerLink]="['/']"><img width="100" height="20" src="/assets/scantek_logo.png" alt=""></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target=".navbar-collapse"
+      aria-label="Toggle navigation"
+      [attr.aria-expanded]="isExpanded"
+      (click)="toggle()"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
+      [ngClass]="{ show: isExpanded }"
+    >
+     <ul  class="navbar-nav flex-grow">
+        <li class="nav-item">
+          <a class="nav-link text-dark" [routerLink]="['/user/register']">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" [routerLink]="['/user/login']">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div *ngIf="isLoggedIn" class="container">
+      <a class="navbar-brand" [routerLink]="['/dashboard']"><img width="100" height="25" src="/assets/murdoch_university.jpg" alt="" style="margin-right: 10px;"><img width="100" height="20" src="/assets/scantek_logo.png" alt=""></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-label="Toggle navigation"
+        [attr.aria-expanded]="isExpanded"
+        (click)="toggle()"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
+        [ngClass]="{ show: isExpanded }"
+      >
+        <ul  class="navbar-nav flex-grow">
+          <li class="nav-item">
+            <a class="nav-link text-dark" [routerLink]="['/classes']">Classes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" [routerLink]="['/labels']">Labels</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" [routerLink]="['/labeling']">Rectangular</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" >Polygon</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" [routerLink]="['/review-labels']">Review Labels</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" [routerLink]="['/user/logout']">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

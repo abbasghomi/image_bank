@@ -1,0 +1,81 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.text {color: #52A441;}
+
+.mat-toolbar.mat-primary {
+  background: #52A441;
+  color: #fff;
+}
+.mat-raised-button.mat-primary {
+  background: #52A441;
+  color: #fff;
+}
+
+tbody {
+  display: block;
+  overflow: auto;
+  height: 500px;
+  width: 100%;
+}
+
+thead tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+thead, tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+thead {
+  width: calc( 100% - 1em )
+}
+
+.button_div{
+  display: flex;
+  justify-content: center;
+}
+
+.pagination > li > a
+{
+    background-color: white;
+    color: #000000;
+    border: solid 1px #6bd855;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: #52A441;
+    background-color: #51a44128;
+    border-color: rgba(72, 146, 57, 0.596);
+}
+
+.pagination > .active > a
+{
+    color: white;
+    background-color: #52A441 !Important;
+    border: solid 1px #52A441 !Important;
+}
+
+.pagination > .active > a:hover
+{
+    background-color: #6bd855 !Important;
+    border: solid 1px #6bd855;
+}
+
+.mat-form-field-label {
+        color: #52A441 !important;
+    }
+.mat-form-field-ripple {
+        background-color:  #52A441 !important;
+    }
+

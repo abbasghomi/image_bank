@@ -1,0 +1,19 @@
+img {
+  width: 500px;
+
+  object-fit: cover;
+}
+
+.img-container {
+  width: 640px;
+  height: 480px;
+  float: left;
+  display: block;
+}
+
+.img-preview {
+  width: 200px;
+  object-fit: cover;
+  float: left;
+  margin-left: 10px;
+}

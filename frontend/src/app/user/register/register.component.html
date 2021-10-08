@@ -1,0 +1,30 @@
+<div fxLayoutAlign = "center center" fxFlexFill class="d-flex justify-content-center align-items-end">
+  <mat-card class="w-50 p-3">
+    <mat-toolbar color="primary">Register page</mat-toolbar>
+      <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" autocomplete="off" [formGroup] = "formGroup" (ngSubmit)="registerProcess()">
+        <mat-form-field [style.width.%]="100" >
+          <input matInput placeholder="Username" formControlName = "username">
+        </mat-form-field>
+        <br>
+        <mat-form-field [style.width.%]="100">
+          <input matInput type="password" placeholder="Password" formControlName = "password">
+        </mat-form-field>
+        <br>
+        <mat-form-field [style.width.%]="100">
+          <input matInput placeholder="Name" formControlName = "name">
+        </mat-form-field>
+        <br>
+        <mat-form-field [style.width.%]="100">
+          <input matInput placeholder="Family" formControlName = "family">
+        </mat-form-field>
+        <br>
+        <mat-form-field [style.width.%]="100">
+          <input matInput placeholder="Email" formControlName = "email">
+        </mat-form-field>
+        <br>
+        <div class="button_div">
+          <button mat-raised-button type="submit" class="mt-5 " color="primary" >Register</button>
+        </div>
+      </form>
+    </mat-card>
+</div>

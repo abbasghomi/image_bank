@@ -1,0 +1,27 @@
+POST http://localhost:4000/api/users
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJCb2IiLCJpYXQiOjE2MzE0NDk0NzksImV4cCI6MTYzMTQ2NzQ3OX0.7z3I3GBRB5Y8UwRB7tZtxsJPnH5Dtj6jSXm2y56ZcKc
+
+{
+    "username": "Bob",
+    "name": "Boboo",
+    "family": "Bobi",
+    "email": "bob@email.com",
+    "password": "1234"
+}
+
+
+###
+GET http://localhost:4000/api/users
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJCb2IiLCJpYXQiOjE2MzE0NDk0NzksImV4cCI6MTYzMTQ2NzQ3OX0.7z3I3GBRB5Y8UwRB7tZtxsJPnH5Dtj6jSXm2y56ZcKc
+
+###
+POST http://localhost:4000/api/login
+Content-Type: application/json
+
+{
+    "username": "Bob",
+    "password": "1234"
+}
+

@@ -1,0 +1,44 @@
+<div class="w-25 p-3" fxLayoutAlign = "center center" fxFlexFill class="main-div">
+  <mat-card fxFlex="25" class="mat-elevation-z0">
+    <mat-toolbar color="primary">Rectangular page</mat-toolbar>
+      <form style="margin-top:10px;" fxLayoutAlign="stretch" fxLayout="column" class="login-form" autocomplete="off" [formGroup] = "formGroup" (ngSubmit)="registerProcess()">
+        <select class="custom-select" style="margin-right:50px;" (change)="changeClass($event)" formControlName="classId">
+          <option value="" disabled>Choose your class</option>
+          <option *ngFor="let item of classes" [ngValue]="item.id">{{item.name}}</option>
+       </select>
+       <select class="custom-select" (change)="changeLabel($event)" formControlName="labelId">
+        <option value="" disabled>Choose your label</option>
+        <option *ngFor="let item of labels" [ngValue]="item.id">{{item.name}}</option>
+     </select>
+        <br>
+            <input class="mt-5" #imageInput
+                  formControlName = "imageInput"
+                  type="file"
+                  accept="image/*"
+                  (change)="processFile(imageInput, $event)">
+          <br>
+          <button mat-raised-button type="submit" class="mt-5 mb-5" color="primary" >Add</button>
+
+        <div *ngIf="selectedFile" class="img-preview-container">
+          <div class="col-md-8">
+            <image-cropper class="img-container"
+              [imageChangedEvent]="imgChangeEvt"
+              [maintainAspectRatio]="false"
+              [aspectRatio]="1"
+              format="png"
+              (imageCropped)="cropImg($event)"
+              (imageLoaded)="imgLoad()"
+              (cropperReady)="initCropper()"
+              (loadImageFailed)="imgFailed()">
+            </image-cropper>
+          </div>
+
+            <img [src]="cropImgPreview" class="img-preview" />
+
+        </div>
+
+
+      </form>
+    </mat-card>
+</div>
+

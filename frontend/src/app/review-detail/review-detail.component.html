@@ -1,0 +1,52 @@
+<div fxLayoutAlign = "center center" fxFlexFill class="main-div">
+  <mat-card fxFlex="25" class="mat-elevation-z0">
+    <mat-toolbar color="primary">Labeling page</mat-toolbar>
+      <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" autocomplete="off" [formGroup] = "formGroup" (ngSubmit)="updateProcess()">
+        <select #class_dropdown class="custom-select" (change)="changeClass($event)" formControlName="classId">
+          <option value="" disabled>Choose your class</option>
+          <option *ngFor="let item of classes" [ngValue]="item.id">{{item.name}}</option>
+       </select>
+       <select #label_dropdown class="custom-select" (change)="changeLabel($event)" formControlName="labelId">
+        <option value="" disabled>Choose your label</option>
+        <option *ngFor="let item of labels" [ngValue]="item.id">{{item.name}}</option>
+     </select>
+     <br>
+     <button class = "mt-5 mb-5" mat-raised-button type="submit" class="mt-5" color="primary" >Update</button>
+     <br>
+     <div class=" mt-5 col-md-8">
+            <image-cropper #cropper class="img-container"
+              [imageChangedEvent]="imgChangeEvt"
+              [maintainAspectRatio]="false"
+              [aspectRatio]="1"
+              format="png"
+              imageBase64="{{imageData}}"
+              (imageCropped)="cropImg($event)"
+              (imageLoaded)="imgLoad()"
+              (cropperReady)="initCropper()"
+              (loadImageFailed)="imgFailed()">
+            </image-cropper>
+          </div>
+          <div>
+            <div>
+              <div>
+                <p>
+                  new layer
+                </p>
+                <img alt="" [src]="cropImgPreview" class="img-preview" />
+              </div>
+            </div>
+            <div>
+              <p>
+                old layer
+              </p>
+              <img alt="" [src]="layerImageData" class="img-preview" />
+            </div>
+
+          </div>
+
+
+
+
+      </form>
+    </mat-card>
+</div>
